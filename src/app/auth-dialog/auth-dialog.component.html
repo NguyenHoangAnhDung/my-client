@@ -1,0 +1,14 @@
+<div class="modal" materialize="modal" [materializeActions]="modalActions">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>Current mode: {{authMode}}</p>
+  </div>
+  <div class="modal-footer">
+    <span *ngIf="isLoginModel()">
+      Need an account?<a (click)="authMode='register'">Click here to register.</a>
+    </span>
+    <span *ngIf="!isLoginModel()">
+      Already have an account? <a (click)="authMode='login'">Click here to login.</a>
+    </span>
+  </div>
+</div>

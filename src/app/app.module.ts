@@ -10,13 +10,15 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 
 import { MaterializeModule } from 'angular2-materialize';
 import { Angular2TokenService } from 'angular2-token';
+import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    AuthDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,4 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { User } from '../user';
 import { Angular2TokenService } from 'angular2-token';
 
 @Component({
@@ -14,9 +13,12 @@ export class LoginFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  user: User = { email: '', password: '' }
+  user = {
+    email: '',
+    password: ''
+  };
 
-  onLoginSubmit(e): void {
+  onLoginSubmit(): void {
     this.authToken.signIn(this.user).subscribe(
       res => {
         if(res.status == 200)

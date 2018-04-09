@@ -6,7 +6,7 @@
       <li *ngIf="!authToken.userSignedIn()"><a (click)="presentAuthDialog()">LOGIN</a></li>
       <li *ngIf="!authToken.userSignedIn()"><a (click)="presentAuthDialog('register')">REGISTER</a></li>
       <li *ngIf="authToken.userSignedIn()"><a>PROFILE</a></li>
-      <li *ngIf="authToken.userSignedIn()"><a>LOGOUT</a></li>
+      <li *ngIf="authToken.userSignedIn()"><a (click)="authToken.signOut()">LOGOUT</a></li>
     </ul>
   </div>
 </nav>

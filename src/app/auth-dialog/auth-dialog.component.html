@@ -1,7 +1,9 @@
 <div class="modal" materialize="modal" [materializeActions]="modalActions">
   <div class="modal-content">
     <h4>Modal Header</h4>
-    <p>Current mode: {{authMode}}</p>
+    <app-login-form
+      *ngIf="isLoginModel()"
+      (onFormResult)="onLoginFormResult($event)"></app-login-form>
   </div>
   <div class="modal-footer">
     <span *ngIf="isLoginModel()">

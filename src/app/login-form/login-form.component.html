@@ -1,0 +1,35 @@
+<form (ngSubmit)="onLoginSubmit($event)" #loginForm="ngForm">
+  <div class="row">
+    <div class="input-field col s12">
+      <input
+        id="email"
+        type="email"
+        name="email"
+        class="validate"
+        required
+        [(ngModel)]="user.email"
+        >
+      <label for="email">Email</label>
+    </div>
+
+    <div class="input-field col s12">
+      <input
+        id="password"
+        type="password"
+        name="password"
+        class="validate"
+        required
+        [(ngModel)]="user.password"
+        >
+      <label for="password">Password</label>
+    </div>
+
+    <div class="input-field col s12">
+      <button type="submit"
+        [disabled]="!loginForm.valid"
+        name="button"
+        class="waves-effect waves-light btn blue right"
+        >Login</button>
+    </div>
+  </div>
+</form>

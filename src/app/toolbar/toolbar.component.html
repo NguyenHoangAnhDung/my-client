@@ -3,9 +3,10 @@
   <div class="nav-wrapper">
     <a href="#" class="brand-logo">Logo</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a (click)="presentAuthDialog()">Login</a></li>
-      <li><a (click)="presentAuthDialog('register')">Register</a></li>
-      <li><a>JavaScript</a></li>
+      <li *ngIf="!authToken.userSignedIn()"><a (click)="presentAuthDialog()">LOGIN</a></li>
+      <li *ngIf="!authToken.userSignedIn()"><a (click)="presentAuthDialog('register')">REGISTER</a></li>
+      <li *ngIf="authToken.userSignedIn()"><a>PROFILE</a></li>
+      <li *ngIf="authToken.userSignedIn()"><a (click)="authToken.signOut()">LOGOUT</a></li>
     </ul>
   </div>
 </nav>

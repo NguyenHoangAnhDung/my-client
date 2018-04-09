@@ -24,4 +24,15 @@ export class AuthDialogComponent implements OnInit {
     this.modalActions.emit({action: "modal", params:['open']});
   }
 
+  onLoginFormResult(e): void {
+    if(e.signedIn)
+      this.closeDialog();
+    else
+      alert(e.err.json().errors[0]);
+  }
+
+  closeDialog(): void {
+    this.modalActions.emit({action: "modal", params:['close']});
+  }
+
 }

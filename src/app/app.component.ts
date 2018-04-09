@@ -13,7 +13,5 @@ export class AppComponent {
 
   constructor(private authToken: Angular2TokenService) {
     this.authToken.init(environment.token_auth_config);
-    this.authToken.signIn({ email: "user@gmail.com", password: "password123" })
-      .subscribe(res => console.log(res), err => console.log(err));
   }
 }

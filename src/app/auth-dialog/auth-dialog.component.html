@@ -4,6 +4,10 @@
     <app-login-form
       *ngIf="isLoginModel()"
       (onFormResult)="onLoginFormResult($event)"></app-login-form>
+    <app-register-form
+      *ngIf="!isLoginModel()"
+      (onFormResult)="onRegisterFormResult($event)"
+    ></app-register-form>
   </div>
   <div class="modal-footer">
     <span *ngIf="isLoginModel()">

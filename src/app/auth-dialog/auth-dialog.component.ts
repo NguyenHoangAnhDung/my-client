@@ -31,6 +31,14 @@ export class AuthDialogComponent implements OnInit {
       alert(e.err.json().errors[0]);
   }
 
+  onRegisterFormResult(e): void {
+    if(e.signedUp)
+      this.closeDialog();
+    else {
+      alert(e.err.json().errors[0]);
+    }
+  }
+
   closeDialog(): void {
     this.modalActions.emit({action: "modal", params:['close']});
   }
